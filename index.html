@@ -14,6 +14,10 @@
 
 <body>
   <h3> Random Picture</h3>
+  <div id = "joke">
+  </div>
+  <div id = "punchline">
+  </div>
   <form class="pure-form">
     <input type="text" class="pure-input-rounded" id="quote">
     <button type="submit" class="pure-button" id="search">Search</button>
@@ -22,11 +26,12 @@
   <script>
   $('#search').click(function(e) {
      e.preventDefault();
-    
-     $.getJSON('GET https://api.gettyimages.com/v3/search/images?fields=id,title,thumb,referral_destinations&sort_order=best&phrase=basketball
-){
-        alert("Thats all folks");
-     });
+      $.getJSON("https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke", function(a) {
+      $("#joke").html("<p>" + a.setup + "</p>");
+      $("#punchline").html("<p>" + a.punchline + "</p>");
+      
+    });
+ 
   });
   </script>
 </body>
