@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Get Stock Quote</title>
+  <title>Random Picture</title>
   <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
   <script
   src="https://code.jquery.com/jquery-3.3.1.js"
@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <h3> Stock Quote</h3>
+  <h3> Random Picture</h3>
   <form class="pure-form">
     <input type="text" class="pure-input-rounded" id="quote">
     <button type="submit" class="pure-button" id="search">Search</button>
@@ -24,9 +24,10 @@
   <script>
   $('#search').click(function(e) {
      e.preventDefault();
-     var stock = $('#quote').val();
-     $.getJSON('https://api.iextrading.com/1.0/stock/' + stock + '/quote', function(json){
-        alert("Current price of " + stock + ": " + json['latestPrice']);
+    
+     $.getJSON('GET https://api.gettyimages.com/v3/search/images?fields=id,title,thumb,referral_destinations&sort_order=best&phrase=basketball
+){
+        alert("Thats all folks");
      });
   });
   </script>
