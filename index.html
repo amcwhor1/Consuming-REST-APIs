@@ -34,7 +34,7 @@
     $('#generate').click(function(e) {
     e.preventDefault();
     $.getJSON('https://randomuser.me/api/', function(a) {
-      $("#quote").html("<p>" + a[0].gender + "</p>")
+      $("#quote").html("<p>" + a.gender + "</p>")
     });
   });
     
