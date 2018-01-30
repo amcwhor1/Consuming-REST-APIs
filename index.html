@@ -15,18 +15,26 @@
   <div id = "punchline">
     <h1> Random Joke</h1>
     <p> This will be hilarious </p>
-     <button type = "submit" class = "pure-button" id = "jokeGen"> Search</button>
+     <button type = "submit" class = "pure-button" id = "btn"> Search</button>
   </div>
  
   
   <script>
+    //creates js variable that points to the html button labeled "btn"
+    var btn = document.getElementByID("btn");
+    btn.addEventListener("click", function(){
+       //still getting JSON data even though it says XML request... it has been an integral part
+    //for so long that the name has stuck around even though JSON has taken over XML
     var myRequest = new XMLHttpRequest();
     myRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-1.json');
     myRequest.onload = function(){
     var myData = JSON.parse(myRequest.responseText);
     console.log(myData[0]);
     };
-    myRequest.send();
+    myRequest.send(); 
+    });
+    
+  
   </script>
   
 </body>
