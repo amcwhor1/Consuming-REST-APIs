@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Random Picture</title>  
+  <title>Joke Generater</title>  
 
   <style>
     body {
@@ -11,41 +11,23 @@
 </head>
 
 <body>
-  <h3> Random Joke</h3>
-  <div id = "joke">
-    <p>This will be hilarious</p>
-    
-     <form class="pure-form">
-    <input type="text" class="pure-input-rounded" id="quote">
    
-  </form>
-    
-  </div>
-  
   <div id = "punchline">
-    <p>Test </p>
-     <button type="submit" class="pure-button" id="jokeGen">Search</button>
+    <h1> Random Joke</h1>
+    <p> This will be hilarious </p>
+     <button type = "submit" class = "pure-button" id = "jokeGen"> Search</button>
   </div>
  
-</body>
-  <script>
-        function getJoke()
-    {
-       $.getJSON("https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke", function(a) {
-        $("<p>" + a.setup + "</p>");
-        $("<p>" + a.setup + "</p>");
-        $("#joke").html("<p>" + a.setup + "</p>");
-        $("#punchline").html("<p>" + a.punchline + "</p>");
-        });
-     }
-  </script>
   
   <script>
   $('#jokeGen').click(function(e) {
-     e.preventDefault();
-     getJoke();
- 
+  var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://api.icndb.com/jokes/random", true);
+    xhr.setRequestHeader("Content-type", "application/json");
+    xhr.send();
+    console.log(xhr.status);
+
   });
   </script>
-
+</body>
 </html>
