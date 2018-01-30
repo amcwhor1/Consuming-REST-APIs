@@ -17,12 +17,13 @@
 
 
 <body>
-    <h1> Random Names</h1>
+    <h1> Want to Generate a Human?</h1>
     
      <button id="generate">Get Name</button>
   
   
   <div id = "quote">
+    
    <p> Name will be here </p>
   </div>
  
@@ -34,7 +35,8 @@
     $('#generate').click(function(e) {
     e.preventDefault();
     $.getJSON('https://uinames.com/api/', function(a) {
-      $("#quote").html("<p>" + "Person's name is: "+ a.name + a.surname + a.gender + a.region + "</p>")
+      $("#quote").html("<p>" + "Person's name is: "+ a.name + " " + a.surname + 
+                       "\n " + a.name + "'s a: " + a.gender "\n " + "Lives in: " + a.region + "</p>")
     });
   });
     
