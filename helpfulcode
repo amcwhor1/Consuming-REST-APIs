@@ -1,0 +1,33 @@
+<script>
+var animalContainer = document.getElementById("animal-info");
+    
+    //creates js variable that points to the html button labeled "btn"
+    var btn = document.getElementById("btn");
+    
+    btn.addEventListener("click", function(){
+       //still getting JSON data even though it says XML request... it has been an integral part
+    //for so long that the name has stuck around even though JSON has taken over XML
+    var myRequest = new XMLHttpRequest();
+    myRequest.open('GET', 'http://api.open-notify.org/astros.json');
+      
+    myRequest.onload = function(){
+    var myData = JSON.parse(myRequest.responseText);
+      renderHTML(myData);
+   // console.log(myData[0]); this would be how you print to the console
+    };
+    myRequest.send(); 
+    });
+    
+    function renderHTML(data)
+    {
+      var htmlString = "";
+      
+      for(i = 0; i < data.length; i++)
+      { //********look at this!!! grabbing the information based on variables to creat
+        // the objects!
+        htmlString += "<p>" + data[i].number + "is a" + data[i].people + ".</p>";
+      }
+      
+       animalContainer.insertAdjacentHTML('beforeend', htmlString);
+    }
+    </script>
