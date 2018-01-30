@@ -20,14 +20,13 @@
  
   
   <script>
-  $('#jokeGen').click(function(e) {
-  var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://api.icndb.com/jokes/random", true);
-    xhr.setRequestHeader("Content-type", "application/json");
-    xhr.send();
-    console.log(xhr.status);
-
-  });
+    var myRequest = new XMLHttpRequest();
+    myRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-1.json');
+    myRequest.onload = function(){
+    console.log(myRequest.responseText);
+    };
+    myRequest.send();
   </script>
+  
 </body>
 </html>
