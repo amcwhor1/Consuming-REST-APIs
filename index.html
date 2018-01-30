@@ -33,8 +33,8 @@
       
     $('#generate').click(function(e) {
     e.preventDefault();
-    $.getJSON('https://uinames.com/api/', function(a) {
-      $("#quote").html("<p>" + a[0].name + a[0].surname + "</p>")
+    $.getJSON('https://yesno.wtf/api', function(a) {
+      $("#quote").html("<p>" + a[0].answer + "</p>")
     });
   });
     
