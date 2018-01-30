@@ -33,7 +33,7 @@
     myRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-1.json');
     myRequest.onload = function(){
     var myData = JSON.parse(myRequest.responseText);
-      rednerHTML(myData);
+      renderHTML(myData);
    // console.log(myData[0]); this would be how you print to the console
     };
     myRequest.send(); 
