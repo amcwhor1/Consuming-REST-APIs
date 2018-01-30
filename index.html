@@ -22,16 +22,14 @@
  
   
   <script>
-    $('#generate').click(function(e) {
+    $("#generate").click(function(e) {
     e.preventDefault();
     $.getJSON('http://uinames.com/api/', function(a) {
       $("#quote").html("<p>" + a[0].name + a[0].surname + "</p>")
     });
   } );
     
-    
-   
-  
+
   </script>
   
 </body>
