@@ -32,7 +32,7 @@
        //still getting JSON data even though it says XML request... it has been an integral part
     //for so long that the name has stuck around even though JSON has taken over XML
     var myRequest = new XMLHttpRequest();
-    myRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-1.json');
+    myRequest.open('GET', 'http://api.open-notify.org/astros.json');
       
     myRequest.onload = function(){
     var myData = JSON.parse(myRequest.responseText);
@@ -49,7 +49,7 @@
       for(i = 0; i < data.length; i++)
       { //********look at this!!! grabbing the information based on variables to creat
         // the objects!
-        htmlString += "<p>" + data[i].name + "is a" + data[i].species + ".</p>";
+        htmlString += "<p>" + data[i].number + "is a" + data[i].people + ".</p>";
       }
       
        animalContainer.insertAdjacentHTML('beforeend', htmlString);
