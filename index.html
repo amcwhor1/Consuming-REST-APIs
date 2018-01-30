@@ -11,15 +11,19 @@
 </head>
 
 <body>
-   
-  <div id = "punchline">
     <h1> Random Joke</h1>
     <p> This will be hilarious </p>
      <button type = "submit" class = "pure-button" id = "btn"> Search</button>
+  
+  
+  <div id = "animal-info">
+   
   </div>
  
   
   <script>
+    var animalContainer = document.GetElementById("animal-info");
+    
     //creates js variable that points to the html button labeled "btn"
     var btn = document.getElementById("btn");
     btn.addEventListener("click", function(){
@@ -29,11 +33,24 @@
     myRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-1.json');
     myRequest.onload = function(){
     var myData = JSON.parse(myRequest.responseText);
-    console.log(myData[0]);
+      rednerHTML(myData);
+   // console.log(myData[0]); this would be how you print to the console
     };
     myRequest.send(); 
     });
     
+    function renderHTML(data)
+    {
+      var htmlString = "";
+      
+      for(i = 0; i < data.length; i++)
+      { //********look at this!!! grabbing the information based on variables to creat
+        // the objects!
+        htmlString += "<p>" + data[i].name + "is a" + data[i].species + ".</p>";
+      }
+      
+       animalContainer.insertAdjacentHTML('beforeend', htmlString);
+    }
   
   </script>
   
