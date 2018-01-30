@@ -33,7 +33,7 @@
       
     $('#generate').click(function(e) {
     e.preventDefault();
-    $.getJSON('http://uinames.com/api/', function(a) {
+    $.getJSON('https://uinames.com/api/', function(a) {
       $("#quote").html("<p>" + "Person's name is: "+ a.name + a.surname + a.gender + a.region + "</p>")
     });
   });
