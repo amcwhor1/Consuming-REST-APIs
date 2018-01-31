@@ -20,20 +20,28 @@
     width: 150px;
     height: 80px;
     font-size: 30px;
-    border-radius: 55%;
-    background-color: green;
+    border-radius: 55%;    
+    }
+    .genPerson{
+    background-color: yellow;
+    }
     
+    .genJoke{
+    background-color: orange;
+    }
+    
+    .genPunchline{
+    background-color: red;
     }
     
   </style>
 
 
 <body>
-    <h1> Want to hear a joke from someone anywhere in the world?</h1>
+    <h1> Wanna hear a joke from a random person in the world?</h1>
     
   <br/>
-     
-  
+       
   <button id="genPerson">Get Name</button>
   <div id = "human">
   
@@ -49,7 +57,13 @@
     <h2> </h2>
    <p>  </p>
   </div>
-  
+
+<button id="genPunchline">Get Punchline</button>
+ <div id = "punchline">
+ 
+    <h2> </h2>
+   <p>  </p>
+  </div>
   
   <script>
       
@@ -65,7 +79,14 @@
     $('#genJoke').click(function(e) {
     e.preventDefault();
     $.getJSON('https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke', function(a) {
-      $("#joke").html("<h2>" + a.setup + a.punchline + "</h2>")
+      $("#joke").html("<h2>" + a.setup + "</h2>")
+    });
+  });
+    
+     $('#genPunchline').click(function(e) {
+    e.preventDefault();
+    $.getJSON('https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke', function(a) {
+      $("#punchline").html("<h2>" + a.punchline + "</h2>")
     });
   });
     
