@@ -19,8 +19,8 @@
     button {
     width: 150 px;
     font-size: 30px;
-    border-radius: 30%;
-    background-color: red;
+    border-radius: 55%;
+    background-color: green;
     
     }
     
@@ -46,8 +46,8 @@
     $('#generate').click(function(e) {
     e.preventDefault();
     $.getJSON('https://uinames.com/api/', function(a) {
-      $("#quote").html("<h2>" + "Person's name is: "+ a.name + " " + a.surname + 
-                       "<br/> " + a.name + " is a: " + a.gender + "<br/> " + "Lives in: " + a.region + "</h2>")
+      $("#quote").html("<h2>" + "Human's name: "+ "   "  + a.name + " " + a.surname + 
+                       "<br/> <br/> " + a.name + " is: " + a.gender + "<br/><br/> " + "Lives in: " + a.region + "</h2>")
     });
   });
     
