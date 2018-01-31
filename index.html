@@ -54,8 +54,8 @@
     $('#genPerson').click(function(e) {
     e.preventDefault();
     $.getJSON('https://uinames.com/api/', function(a) {
-      $("#human").html("<h2>" + a.name + " " + a.surname + " (" + a.gender + ") " + 
-          "from " + a.region + " has a joke. Click 'Tells Joke' to see it!" + "</h2>")
+      $("#human").html("<br/>" + "<h2>" + a.name + " " + a.surname + " (" + a.gender + ") " + 
+          "from " + a.region + " has a joke. Click <b>'Tells Joke'</b> to see it!" + "</h2>")
     });
   });
     
@@ -63,7 +63,7 @@
     $('#genJoke').click(function(e) {
     e.preventDefault();
     $.getJSON('https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke', function(a) {
-      $("#joke").html("<h2>" + a.setup + "<br/>" + a.punchline + "</h2>")
+      $("#joke").html("<h2>" + a.setup + "<br/><br/>" +"Punchline:" + "<br/>" + a.punchline + "</h2>")
     });
   });
     
