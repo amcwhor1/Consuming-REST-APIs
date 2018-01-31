@@ -16,7 +16,7 @@
     }
     
     button {
-    width: 170px;
+    width: 270px;
     height: 90px;
     font-size: 30px;
     border-radius: 55%;    
@@ -31,7 +31,7 @@
     
   <br/>
        
-  <button style="background-color: green;" id="genPerson">Get Name</button>
+  <button style="background-color: green;" id="genPerson">Random Person</button>
   <div id = "human">
   
     <h2> </h2>
@@ -39,8 +39,8 @@
   </div>
  
   <br/>
-  
- <button style="background-color: blue;" id="genJoke">Get Joke</button>
+  <br/>
+ <button style="background-color: blue;" id="genJoke">Tells Joke</button>
  <div id = "joke">
  
     <h2> </h2>
@@ -55,7 +55,7 @@
     e.preventDefault();
     $.getJSON('https://uinames.com/api/', function(a) {
       $("#human").html("<h2>" + a.name + " " + a.surname + " (" + a.gender + ") " + 
-          "from " + a.region + " has a joke they wanna tell... click 'Get Joke' to see it!" + "</h2>")
+          "from " + a.region + " has a joke. Click 'Tells Joke' to see it!" + "</h2>")
     });
   });
     
