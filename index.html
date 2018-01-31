@@ -23,7 +23,7 @@
   
   
   <div id = "quote">
-    
+    <h2> </h2>
    <p> Name will be here </p>
   </div>
  
@@ -35,8 +35,8 @@
     $('#generate').click(function(e) {
     e.preventDefault();
     $.getJSON('https://uinames.com/api/', function(a) {
-      $("#quote").html("<p>" + "Person's name is: "+ a.name + " " + a.surname + 
-                       "<br/> " + a.name + " is a: " + a.gender + "<br/> " + "Lives in: " + a.region + "</p>")
+      $("#quote").html("<h2>" + "Person's name is: "+ a.name + " " + a.surname + 
+                       "<br/> " + a.name + " is a: " + a.gender + "<br/> " + "Lives in: " + a.region + "</h2>")
     });
   });
     
