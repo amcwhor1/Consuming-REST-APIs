@@ -32,28 +32,40 @@
     <h1> Want to Generate a Human?</h1>
     
   <br/>
-     <button id="generate">Get Name</button>
+     
   
   
-  <div id = "quote">
+  <div id = "human">
+  <button id="genPerson">Get Name</button>
     <h2> </h2>
    <p>  </p>
   </div>
  
- 
+ <div id = "joke">
+ <button id="genJoke">Get Joke</button>
+    <h2> </h2>
+   <p>  </p>
+  </div>
   
   
   <script>
       
-    $('#generate').click(function(e) {
+    $('#genPerson').click(function(e) {
     e.preventDefault();
     $.getJSON('https://uinames.com/api/', function(a) {
-      $("#quote").html("<h2>" + "Human's name: "+ "   "  + a.name + " " + a.surname + 
-                       "<br/> <br/> " + a.name + " is: " + a.gender + "<br/><br/> " + "Lives in: " + a.region + "</h2>")
+      $("#human").html("<h2>" + a.name + " " + a.surname + " (" + a.gender + ") " + 
+          "from " + a.region + " has a joke they wanna tell... click 'Get Joke' to see it!" + "</h2>")
     });
   });
     
 
+    $('#genJoke').click(function(e) {
+    e.preventDefault();
+    $.getJSON('https://uinames.com/api/', function(a) {
+      $("#joke").html("<h2>" + a.setup + a.punchline + "</h2>")
+    });
+  });
+    
   </script>
   
  </body>
