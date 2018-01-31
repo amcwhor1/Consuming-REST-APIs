@@ -47,12 +47,7 @@
    <p>  </p>
   </div>
 
-<button style="background-color: red;" id="genPunchline">Get Punchline</button>
- <div id = "punchline">
- 
-    <h2> </h2>
-   <p>  </p>
-  </div>
+
   
   <script>
       
@@ -68,16 +63,11 @@
     $('#genJoke').click(function(e) {
     e.preventDefault();
     $.getJSON('https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke', function(a) {
-      $("#joke").html("<h2>" + a.setup + "</h2>")
+      $("#joke").html("<h2>" + a.setup + "<br/>" + a.punchline + "</h2>")
     });
   });
     
-     $('#genPunchline').click(function(e) {
-    e.preventDefault();
-    $.getJSON('https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke', function(a) {
-      $("#punchline").html("<h2>" + a.punchline + "</h2>")
-    });
-  });
+    
     
   </script>
   
